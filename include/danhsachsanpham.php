@@ -57,7 +57,8 @@
 
     ul.products li img{
         width: 100%;
-        height: auto;
+        height: 250px;
+        object-fit: cover;
     }
 
     ul.products li .product-top .product-thump{
@@ -66,6 +67,7 @@
 
     ul.products li .product-top .product-thump img{
         display: block;
+        
     }
 
     ul.products li .product-top a.addCart{
@@ -100,7 +102,7 @@
             <div class='product-item'>
                 <div class='product-top'>
                     <a href=' class='product-thump'>
-                        <img src='./public/images/sanpham1.png' alt='>
+                        <img src='./public/images/sanpham/",$value['AnhSP'],"' >
                     </a>
                     <a href=' class='addCart'>Them</a>
                 </div>
