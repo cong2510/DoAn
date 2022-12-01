@@ -13,8 +13,12 @@
         <li><a href="#">About</a></li>
     </div>
     <div class="other">
+        <form action="/cong/DoAn/timkiem.php" method="post">
+            <input type="text" name="search">
+            <input type="submit" name="btnTim" value="Tim">
+        </form>
         <li><a href="#">Đăng nhập</a></li>
         <li><a href="#">Đăng ký</a></li>
-        <li><a href="#"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></i></li>
+        <li><a href="giohang.php"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></i></li>
     </div>
 </header>

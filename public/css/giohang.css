@@ -1,0 +1,72 @@
+.cart{
+    margin: 80px auto;
+}
+
+.cart table{
+    width: 70%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-info
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background-color: orange;
+    font-weight: bold;
+}
+
+.cart td
+{
+    padding: 10px 5px;
+}
+
+.cart td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.cart td a
+{
+    color: red;
+    font-size: 12px;
+}
+
+.cart td img
+{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart .total-price table{
+    border-top: 3px solid orange;
+    width: 100%;
+    max-width: 350px;
+}
+
+.cart td:last-child{
+    text-align: right;
+}
+
+.cart th:last-child{
+    text-align: right;
+}
+
+
+
+
+

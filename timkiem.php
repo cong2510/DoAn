@@ -1,7 +1,11 @@
 <?php
-include "./config/connection.php";
+include "/php/DoAn/config/connection.php";
+
 if (isset($pdo)) {
-    $sql = "select * from sanpham";
+    if (isset($_POST['btnTim']) && ($_POST['btnTim'])) {
+        $search = $_POST['search'];
+        $sql = "Select * from sanpham where TenSP like '$search' or LoaiSP like '$search' or ThuongHieu like '$search'";
+    }
     $pdo->query("set names 'utf8'");
     $result = $pdo->prepare($sql);
     $result->execute();
@@ -29,6 +33,7 @@ if (isset($pdo)) {
     .headline {
         text-align: center;
         margin: 40px 0px;
+        margin-top: 150px;
     }
 
     .headline h3 {
@@ -87,26 +92,39 @@ if (isset($pdo)) {
         display: block;
         text-decoration: none;
     }
-
-    
 </style>
 
-<div id="wrapper">
-    <div class="headline">
-        <h3>Sản phẩm bán chạy</h3>
-    </div>
-    <ul class="products">
-        <?php
-        foreach ($item as $key => $value) {
-            echo
-            "<li>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <title>Web bán quần áo</title>
+</head>
+
+<body>
+    <div class="">
+        <?php include "/php/DoAn/include/header.php"; ?>
+        <div id="wrapper">
+            <div class="headline">
+                <h3>Sản phẩm bán chạy</h3>
+            </div>
+            <ul class="products">
+                <?php
+                foreach ($item as $key => $value) {
+                    echo
+                    "<li>
             <div class='product-item'>
                 <div class='product-top'>
                     <a href='#' class='product-thump'>
                         <img src='./public/images/sanpham/", $value['AnhSP'], "' >
                     </a>
                     <form action='themsanpham.php' method='post'>
-                        <input type='number' name='sl' value='",1,"' style='width=100%; max-width: 50px; ' >
+                        <input type='number' name='sl' value='", 1, "' style='width=100%; max-width: 50px; ' >
                         <input type='hidden' name='id' value='", $value['MaSP'], "'>
                         <input type='hidden' name='img' value='", $value['AnhSP'], "'>
                         <input type='hidden' name='loaisp' value='", $value['LoaiSP'], "'>
@@ -122,8 +140,15 @@ if (isset($pdo)) {
                 </div>
             </div>
         </li>";
-        }
-        ?>
+                }
+                ?>
 
-    </ul>
-</div>
+            </ul>
+        </div>
+        <?php include "/php/DoAn/include/footer.php"; ?>
+    </div>
+
+
+</body>
+
+</html>
