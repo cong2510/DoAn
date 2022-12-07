@@ -1,5 +1,5 @@
 <?php
-include "/php/DoAn/config/connection.php";
+include "./config/connection.php";
 
 if (isset($pdo)) {
     if (isset($_POST['btnTim']) && ($_POST['btnTim'])) {
@@ -145,7 +145,7 @@ if (isset($pdo)) {
 
             </ul>
         </div>
-        <?php include "/php/DoAn/include/footer.php"; ?>
+        <?php include "./include/footer.php"; ?>
     </div>
 
 

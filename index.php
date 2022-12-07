@@ -14,7 +14,10 @@
     <div class="">
         <?php include "./include/header.php"; ?>
         <?php include "./include/slide.php"; ?>
-        <?php include "./include/danhsachsanpham.php"; ?>
+        <?php
+      
+            include "./include/danhsachsanpham.php";
+        ?>
         <?php include "./include/footer.php"; ?>
     </div>
 
