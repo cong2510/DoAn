@@ -4,10 +4,11 @@ include "./config/connection.php";
 if (isset($pdo)) {
     if (isset($_POST['btnTim']) && ($_POST['btnTim'])) {
         $search = $_POST['search'];
-        $sql = "Select * from sanpham where TenSP like '$search' or LoaiSP like '$search' or ThuongHieu like '$search'";
+        $sql = "Select * from sanpham where TenSP like :search";
     }
     $pdo->query("set names 'utf8'");
     $result = $pdo->prepare($sql);
+    $result->bindValue(":search", "%$search%");
     $result->execute();
     $item = array();
 
@@ -111,7 +112,7 @@ if (isset($pdo)) {
         <?php include "/php/DoAn/include/header.php"; ?>
         <div id="wrapper">
             <div class="headline">
-                <h3>Sản phẩm bán chạy</h3>
+                <h3>Sản phẩm</h3>
             </div>
             <ul class="products">
                 <?php
